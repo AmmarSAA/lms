@@ -1,0 +1,618 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"btn",
+				"btn-warning"
+			],
+			[
+				"slider",
+				"slider_img_temp"
+			],
+			[
+				"ec",
+				"echo"
+			],
+			[
+				"WE",
+				"WEBSITE_URL"
+			],
+			[
+				"if",
+				"if"
+			],
+			[
+				"ehc",
+				"echo"
+			],
+			[
+				"re",
+				"required"
+			],
+			[
+				"day",
+				"day_fine"
+			],
+			[
+				"tot",
+				"total_fine"
+			],
+			[
+				"ech",
+				"echo"
+			],
+			[
+				"fine_per",
+				"fine_per_extra"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"h",
+				"h6"
+			],
+			[
+				"fin",
+				"fine_per_page"
+			],
+			[
+				"_",
+				"$_POST"
+			],
+			[
+				"due",
+				"due_date_str"
+			],
+			[
+				"du",
+				"due_date"
+			],
+			[
+				"to",
+				"today_date"
+			],
+			[
+				"If",
+				"IfIsUser"
+			],
+			[
+				"esl",
+				"elseif"
+			],
+			[
+				"iss",
+				"isset()"
+			],
+			[
+				"tex",
+				"text-nowrap"
+			],
+			[
+				"fine",
+				"fine_calculator"
+			],
+			[
+				"tota",
+				"total_fine"
+			],
+			[
+				"toatl",
+				"total_fine"
+			],
+			[
+				"form",
+				"form-control-lg"
+			],
+			[
+				"for",
+				"form-control-lg"
+			],
+			[
+				"Get",
+				"GetDayFine"
+			],
+			[
+				"t",
+				"td\tTag"
+			],
+			[
+				"th",
+				"th\tTag"
+			],
+			[
+				"ret",
+				"ret\treturn"
+			],
+			[
+				"i",
+				"ifelse\tif … else …"
+			],
+			[
+				"RET",
+				"return"
+			],
+			[
+				"today",
+				"today_date_day"
+			],
+			[
+				"due_date_",
+				"due_date_day"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"get",
+				"getdate"
+			],
+			[
+				"getdate",
+				"get_declared_interfaces"
+			],
+			[
+				"date_p",
+				"variant_date_from_timestamp"
+			],
+			[
+				"da",
+				"date_timestamp_get"
+			],
+			[
+				"date_n",
+				"date_timezone_get"
+			],
+			[
+				"Date",
+				"date_add"
+			],
+			[
+				"p",
+				"pattern\tAttr"
+			],
+			[
+				"boo",
+				"book_id"
+			],
+			[
+				"us",
+				"user_id"
+			],
+			[
+				"br",
+				"break"
+			],
+			[
+				"s",
+				"switch\tswitch …"
+			],
+			[
+				"issue",
+				"issue_date_month"
+			],
+			[
+				"ema",
+				"email_id"
+			],
+			[
+				"te",
+				"text-truncate"
+			],
+			[
+				"feed",
+				"feedback"
+			],
+			[
+				"c",
+				"conn"
+			],
+			[
+				"Null",
+				"Null"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"use",
+				"user_email"
+			],
+			[
+				"reply",
+				"reply"
+			],
+			[
+				"rating",
+				"rating"
+			],
+			[
+				"feedback",
+				"feedback"
+			],
+			[
+				"bo",
+				"border-top-width\tproperty"
+			],
+			[
+				"wid",
+				"border-image-width\tproperty"
+			],
+			[
+				"convert_",
+				"convert_cyr_string"
+			],
+			[
+				"In",
+				"Inactive"
+			],
+			[
+				"prin",
+				"printf"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"stars",
+				"stars"
+			],
+			[
+				"fr",
+				"frame\tTag"
+			],
+			[
+				"fra",
+				"frameset\tTag"
+			],
+			[
+				"toat",
+				"total_admins"
+			],
+			[
+				"slide",
+				"slide_no"
+			],
+			[
+				"fon",
+				"font-family\tproperty"
+			],
+			[
+				"labe",
+				"labelenglish"
+			],
+			[
+				"label",
+				"labelurdu"
+			],
+			[
+				"o",
+				"onclick\tAttr"
+			],
+			[
+				"ac",
+				"active"
+			],
+			[
+				"crea",
+				"creation_date"
+			],
+			[
+				"content",
+				"content"
+			],
+			[
+				"status",
+				"status"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"user",
+				"user_name"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ui",
+				"UI: Customize Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/lms"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/slider/logout.php",
+		"/C/xampp/htdocs/slider/includes/header.php",
+		"/C/xampp/htdocs/slider/index.php",
+		"/C/xampp/htdocs/slider/admin.php",
+		"/C/xampp/htdocs/slider/profile.php",
+		"/C/xampp/htdocs/slider/users.php",
+		"/C/xampp/htdocs/slider/admin-signup.php",
+		"/C/xampp/htdocs/slider/includes/menu.php",
+		"/C/xampp/htdocs/slider/user-signup.php",
+		"/C/xampp/htdocs/slider/slide_list.php",
+		"/C/xampp/htdocs/slider/slide_add.php",
+		"/C/xampp/htdocs/slider/index_slide-generator.php",
+		"/C/xampp/htdocs/slider/dashboard.php",
+		"/C/xampp/htdocs/slider/includes/footer.php",
+		"/C/xampp/htdocs/slider/includes/functions.php",
+		"/C/xampp/htdocs/slider/includes/logo.php",
+		"/C/xampp/htdocs/slider/includes/slider.php",
+		"/C/xampp/htdocs/slider/config.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/menu.php",
+		"/C/xampp/htdocs/slider/slider-generator/view.php",
+		"/C/xampp/htdocs/slider/slider-generator/index.php",
+		"/C/xampp/htdocs/slider/slider-generator/config.php",
+		"/C/xampp/htdocs/slider/slider-generator/includes/view.php",
+		"/C/xampp/htdocs/revslider-master/revslider_admin.php",
+		"/C/xampp/htdocs/revslider-master/inc_php/framework/base_admin.class.php",
+		"/C/xampp/htdocs/revslider-master/inc_php/framework/settings.class.php",
+		"/C/xampp/htdocs/IdCard-Generator-master/index.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/footer.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/slider.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/functions.php",
+		"/C/xampp/htdocs/bazm library/public_html/css/style.css",
+		"/C/xampp/htdocs/bazm library/public_html/css/new_style.css",
+		"/C/xampp/htdocs/bazm library/public_html/includes/header.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/logo.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/fine_calculator.php",
+		"/C/xampp/htdocs/bazm library/public_html/config.php",
+		"/C/xampp/htdocs/bazm library/public_html/logout.php",
+		"/C/xampp/htdocs/bazm library/public_html/slide_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/index.php",
+		"/C/xampp/htdocs/bazm library/public_html/dashboard.php",
+		"/C/xampp/htdocs/bazm library/public_html/slide_add.php",
+		"/C/xampp/htdocs/bazm library/public_html/admin.php",
+		"/C/xampp/htdocs/bazm library/public_html/feedback.php",
+		"/C/xampp/htdocs/bazm library/public_html/reports/reports.php",
+		"/C/xampp/htdocs/bazm library/public_html/category_add.php",
+		"/C/xampp/htdocs/bazm library/public_html/user-signup.php",
+		"/C/xampp/htdocs/bazm library/public_html/admin-signup.php",
+		"/C/xampp/htdocs/bazm library/public_html/author_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/book_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/category_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/users.php",
+		"/C/xampp/htdocs/bazm library/public_html/book_add.php",
+		"/C/xampp/htdocs/bazm library/public_html/feedback_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/issuedbooks_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/profile.php",
+		"/C/xampp/htdocs/bazm library/public_html/rule_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/issuebook.php",
+		"/C/xampp/htdocs/bazm library/public_html/css/bootstrap/old/bootstrap.css",
+		"/C/xampp/htdocs/bazm library/public_html/css/bootstrap/bootstrap.css",
+		"/C/xampp/htdocs/bazm library/reports/reports.php",
+		"/C/xampp/htdocs/bazm library/public_html/includes/image.html",
+		"/C/Users/syeda/Downloads/bad-ice-cream-3-www-boysplaygame-com.html",
+		"/C/Users/syeda/Downloads/bad-ice-cream-3-www-boysplaygame-com.swf",
+		"/C/xampp/htdocs/bazm library/public_html/css/icon.css",
+		"/C/xampp/htdocs/bazm library/public_html/css/bootstrap/bootstrap-grid.css",
+		"/C/Windows/Cursors/aero_unavail.cur",
+		"/C/xampp/htdocs/bazm library/public_html/slider.php",
+		"/C/xampp/htdocs/bazm library/public_html/rule_add.php",
+		"/C/xampp/htdocs/bazm library/public_html/database/lms.sql",
+		"/C/Users/syeda/AppData/Local/Temp/is-SB6QM.tmp/editor-test.txt"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<?=",
+			"redirect",
+			"style.css",
+			"imagecreatefrompng",
+			"UniteBaseAdminClassRev",
+			"UniteSettingsRev",
+			"fine",
+			"text-nowrap",
+			"issued",
+			"padding",
+			"table",
+			"horizontal",
+			"padding",
+			"GetDayFine",
+			"compare",
+			"function",
+			"sql_update",
+			"sql_insert",
+			"col-",
+			"col",
+			"{\n",
+			"fa-e",
+			"glyph",
+			"case",
+			"stars",
+			"status",
+			"total_admins",
+			"total_users",
+			"case",
+			"alert-",
+			"carousel",
+			"status",
+			"acess denied",
+			"lms"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<?php echo",
+			"<?php",
+			"convert",
+			"rating",
+			"stars",
+			"total_authors",
+			"total_admins"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.95766299746,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 109.0
+	},
+	"pinned_build_system": "",
+	"project": "lms.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 185.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
