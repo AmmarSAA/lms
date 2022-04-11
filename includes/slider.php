@@ -36,9 +36,18 @@ $result = $conn->query($sql);
       		<img src="<?php echo WEBSITE_URL; ?>/images/slider/<?php echo $row['slider_img'] ?>" width="1000px" height="500px">
     	</div>
 		<!--<div class="carousel-caption">
-			<p hidden><?php //echo $row['id']; ?></p>
-			<h3><?php //echo $row['title']; ?></h3>
-			<p><?php //echo $row['content']; ?></p>
+			<?php// $x =0;
+			//foreach ($result as $row) { ?>
+				<p hidden><?php// echo $row['id']; ?></p>
+			<?php //$x++; } ?>
+			<?php $x// =0;
+			//foreach ($result as $row) { ?>
+				<h3><?php //echo $row['title']; ?></h3>
+			<?php $//x++; } ?>
+			<?php $x //=0;
+			//foreach ($result as $row) { ?>
+				<p><?php //echo $row['content']; ?></p>
+			<?php $//x++; } ?>
 		</div>-->
     <?php $x++; } ?>
   	<!-- Left and right controls -->

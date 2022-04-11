@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"slide",
+				"slide_no"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
 				"btn",
 				"btn-warning"
 			],
@@ -105,10 +113,6 @@
 			],
 			[
 				"form",
-				"form-control-lg"
-			],
-			[
-				"for",
 				"form-control-lg"
 			],
 			[
@@ -276,10 +280,6 @@
 				"total_admins"
 			],
 			[
-				"slide",
-				"slide_no"
-			],
-			[
 				"fon",
 				"font-family\tproperty"
 			],
@@ -358,12 +358,19 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/xampp/htdocs/lms"
-	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/slider/includes/slider.php",
+		"/C/xampp/htdocs/slider/slide_add.php",
+		"/C/xampp/htdocs/slider/index_slide-generator.php",
+		"/C/xampp/htdocs/lms/dashboard.php",
+		"/C/xampp/htdocs/lms/includes/slider.php",
+		"/C/xampp/htdocs/lms/slide_add.php",
+		"/C/xampp/htdocs/lms/slide_list.php",
+		"/C/xampp/htdocs/bazm library/public_html/slide_add.php",
+		"/C/xampp/htdocs/bazm library/public_html/slide_list.php",
+		"/C/xampp/htdocs/lms/includes/footer.php",
+		"/C/xampp/htdocs/lms/includes/header.php",
 		"/C/xampp/htdocs/slider/logout.php",
 		"/C/xampp/htdocs/slider/includes/header.php",
 		"/C/xampp/htdocs/slider/index.php",
@@ -374,13 +381,10 @@
 		"/C/xampp/htdocs/slider/includes/menu.php",
 		"/C/xampp/htdocs/slider/user-signup.php",
 		"/C/xampp/htdocs/slider/slide_list.php",
-		"/C/xampp/htdocs/slider/slide_add.php",
-		"/C/xampp/htdocs/slider/index_slide-generator.php",
 		"/C/xampp/htdocs/slider/dashboard.php",
 		"/C/xampp/htdocs/slider/includes/footer.php",
 		"/C/xampp/htdocs/slider/includes/functions.php",
 		"/C/xampp/htdocs/slider/includes/logo.php",
-		"/C/xampp/htdocs/slider/includes/slider.php",
 		"/C/xampp/htdocs/slider/config.php",
 		"/C/xampp/htdocs/bazm library/public_html/includes/menu.php",
 		"/C/xampp/htdocs/slider/slider-generator/view.php",
@@ -401,10 +405,8 @@
 		"/C/xampp/htdocs/bazm library/public_html/includes/fine_calculator.php",
 		"/C/xampp/htdocs/bazm library/public_html/config.php",
 		"/C/xampp/htdocs/bazm library/public_html/logout.php",
-		"/C/xampp/htdocs/bazm library/public_html/slide_list.php",
 		"/C/xampp/htdocs/bazm library/public_html/index.php",
 		"/C/xampp/htdocs/bazm library/public_html/dashboard.php",
-		"/C/xampp/htdocs/bazm library/public_html/slide_add.php",
 		"/C/xampp/htdocs/bazm library/public_html/admin.php",
 		"/C/xampp/htdocs/bazm library/public_html/feedback.php",
 		"/C/xampp/htdocs/bazm library/public_html/reports/reports.php",

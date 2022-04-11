@@ -5,13 +5,10 @@
 			"path": "."
 		}
 	]*/
-	"folders":
+	/*"folders":
 	[
 		{
-			"path": ".",
+			"path": "C:\\xampp\\htdocs\\slider",
 		},
-		{
-			"path": "C:\\xampp\\htdocs\\slider"
-		},
-	],
+	],*/
 }

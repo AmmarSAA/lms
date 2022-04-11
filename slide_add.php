@@ -27,7 +27,7 @@ if (isset($_POST['slide-add']))
 	//Moves uploaded SLider Image to a permenent location
 	move_uploaded_file($slider_img_temp,"./images/slider/$slider_img");
 	
-	if (!empty($slider_img_checker) ){
+	if (!empty($slider_img_checker) || !empty($slider_img)){
 		if (isset($_GET['id']))
 		{
 			if(empty($slider_img)) 
@@ -104,10 +104,10 @@ if (isset($msg))
 								<span class="f-img fa fa-slideshare fa-4x"></span>
 								<h2>Slide</h2>
 								<p>Add Slide Form</p>
-								<p class="labelenglish"><b>Picture:</b></p>
+								<p class="labelenglish"><b>Slide:</b></p>
 								<input type="file" accept="img/*" value="<?php echo $slider_img ?>" name="slider_img" class="labelenglish text-uppercase"/>
 								<input type="hidden" name="slider_img_checker" value="<?php echo $slider_img;?>" />
-								<p class="labelenglish"><small><b>Note:</b><br /> Your <b class="text-uppercase text-right"><?php if(empty($slider_img)){ echo 'Picture'; }else{ echo $slider_img; } ?></b> must not be more than <b>11 MB</b>.</small></p>
+								<p class="labelenglish"><small><b>Note:</b><br /> Your <b class="text-uppercase text-right"><?php if(empty($slider_img)){ echo 'Slide'; }else{ echo $slider_img; } ?></b> must not be more than <b>11 MB</b>.</small></p>
 								<!--<p class="labelenglish"><b>Slide No.:</b></p>
 								<input type="number" value="<?php //echo $slide_no ?>" name="slide_no" class="blank" required hidden/>-->
 								<p class="labelenglish"><b>Topic:</b></p>
