@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2022 at 12:54 PM
+-- Generation Time: Apr 22, 2022 at 07:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -39,6 +39,13 @@ CREATE TABLE `admin` (
   `profile_picture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `full_name`, `admin_email`, `user_name`, `password`, `reg_date`, `updation_date`, `status`, `profile_picture`) VALUES
+(0, 'Not Replied', '', 'Not Replied', '', '2022-03-31 08:53:45', '2022-03-31 08:54:10', 'Active', ''),
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +69,7 @@ CREATE TABLE `tblauthors` (
 CREATE TABLE `tblbooks` (
   `id` int(11) NOT NULL,
   `book_pic` text DEFAULT NULL,
+  `book_online` text DEFAULT NULL,
   `book_name` varchar(255) DEFAULT NULL,
   `book_name_urdu` varchar(250) DEFAULT NULL,
   `cat_id` int(11) DEFAULT 2,
@@ -70,7 +78,7 @@ CREATE TABLE `tblbooks` (
   `book_price` int(11) NOT NULL DEFAULT 100,
   `reg_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `updation_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` tinyint(10) DEFAULT NULL
+  `status` tinyint(10) NOT NULL DEFAULT 5
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -153,7 +161,8 @@ CREATE TABLE `tblslider` (
   `slider_img` text NOT NULL,
   `content` varchar(200) NOT NULL,
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updation_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updation_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `slide_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -212,7 +221,6 @@ ALTER TABLE `tblbooks`
 ALTER TABLE `tblcategory`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `ID` (`id`),
-  ADD UNIQUE KEY `id_2` (`id`),
   ADD UNIQUE KEY `category_name` (`category_name`);
 
 --
@@ -256,55 +264,55 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `tblauthors`
 --
 ALTER TABLE `tblauthors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblbooks`
 --
 ALTER TABLE `tblbooks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblcategory`
 --
 ALTER TABLE `tblcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblfeedback`
 --
 ALTER TABLE `tblfeedback`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblissuedbooksdetail`
 --
 ALTER TABLE `tblissuedbooksdetail`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblrulesandregulations`
 --
 ALTER TABLE `tblrulesandregulations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblslider`
 --
 ALTER TABLE `tblslider`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
 --
 ALTER TABLE `tblusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

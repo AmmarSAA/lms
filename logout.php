@@ -15,7 +15,7 @@ session_destroy();
 include(WEBSITE_PATH.'./includes/header.php');
 include(WEBSITE_PATH.'./includes/logo.php');
 include(WEBSITE_PATH.'./includes/menu.php');
-echo '<div class="alert alert-success">';
+echo '<div class="alert alert-success text-capitalize">';
 echo "You have succesfully logged out😀.";
 echo '</div>';
 ?>     							

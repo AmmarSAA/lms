@@ -12,6 +12,7 @@ require(WEBSITE_PATH.'./includes/session.php');
 include(WEBSITE_PATH.'./includes/header.php');
 include(WEBSITE_PATH.'./includes/logo.php');
 include(WEBSITE_PATH.'./includes/menu.php');
+
 //Get things out from session if user
 if (IfIsUser($conn)) {
 $sql_select = "SELECT * FROM tblusers WHERE user_name = '{$_SESSION['user_name']}' ";
@@ -24,6 +25,7 @@ $sql_select = "SELECT * FROM tblusers WHERE user_name = '{$_SESSION['user_name']
 	    $full_name = $row['full_name'];
 	}
 }
+
 //Get things out from session if admin 
 else{
 	$sql_select = "SELECT * FROM admin WHERE user_name = '{$_SESSION['user_name']}' ";
@@ -37,6 +39,7 @@ else{
 }
 
 $action='';
+
 if(isset($_GET['action']) && isset($_GET['id']))
 {
 	$action 	= $_GET['action'];
@@ -49,6 +52,7 @@ if(isset($_GET['action']) && isset($_GET['id']))
 		$row = $result->fetch_assoc();
 		$id 			= $row['id'];
 		$book_pic 		= $row['book_pic'];
+		$book_online 	= $row['book_online'];
 		$book_name 		= $row['book_name'];
 		$book_name_urdu = $row['book_name_urdu'];
 		$cat_id 		= $row['cat_id'];
@@ -62,47 +66,74 @@ if(isset($_GET['action']) && isset($_GET['id']))
 }
 
 switch ($action) {
+	//If requests a book
 	case 'request':
-	$sql = "INSERT INTO `tblissuedbooksdetail`(
-			    `book_id`,
-			    `user_id`,
-			    `return_status`
-			)
-			VALUES( 
-				{$id}, 
-				{$user_id}, 
-				3
-			)";
-	$result = $conn->query($sql);
-	if($result)
-	{
-		$msg = "<div class='alert alert-success'>Book named,<strong>".$book_name."</strong> is Requested Succcessfully for you(<b>".$full_name."</b>).</div>";
-	}
-	else{
-		$msg = "<div class='alert alert-danger'>Opss!Book named,<b>".$book_name."</b> is Not Requested Successfully, Please Try Again.</div>";
-	}
+		$sql = "INSERT INTO `tblissuedbooksdetail`(
+				    `book_id`,
+				    `user_id`,
+				    `return_status`
+				)
+				VALUES( 
+					{$id}, 
+					{$user_id}, 
+					3
+				)";
+		$result = $conn->query($sql);
+		if($result)
+		{
+			$msg = "<div class='alert alert-success'>Book named,<strong>".$book_name."</strong> is Requested Succcessfully for you(<b>".$full_name."</b>).</div>";
+		}
+		else{
+			$msg = "<div class='alert alert-danger'>Opss!Book named,<b>".$book_name."</b> is Not Requested Successfully, Please Try Again.</div>";
+		}
 
-		break;
+	break;
+	//If deletes a book
 	case 'delete':
-	$sql = "DELETE FROM tblbooks WHERE id={$id}";
-	$result = $conn->query($sql);
-	if($result)
-	{
-		$msg = "<div class='alert alert-success'>Record Deleted Successfully.</div>";
-	}
-	else{
-		$msg = "<div class='alert alert-danger'>Record Not Deleted Successfully.</div>";
-	}
+		$sql = "DELETE FROM tblbooks WHERE id={$id}";
+		$result = $conn->query($sql);
+		if($result)
+		{
+			$msg = "<div class='alert alert-success'>Record Deleted Successfully.</div>";
+		}
+		else{
+			$msg = "<div class='alert alert-danger'>Record Not Deleted Successfully.</div>";
+		}
 
-		break;
+	break;
+	//If read's online a book
+	case 'online':
+		$sql = "SELECT `book_online` FROM `tblbooks` WHERE id={$id} AND (status=1 OR 5)";
+		$result = $conn->query($sql);
+		if ($result && $result->num_rows > 0){
+			$row = $result->fetch_assoc();
+			$id 			= $row['id'];
+			$book_pic 		= $row['book_pic'];
+			$book_online 	= $row['book_online'];
+			$book_name 		= $row['book_name'];
+			$book_name_urdu = $row['book_name_urdu'];
+			$cat_id 		= $row['cat_id'];
+			$author_id 		= $row['author_id'];
+			$isbn_no 		= $row['isbn_number'];
+			$price 			= $row['book_price'];
 
+			redirect("./files/book/".$book_online);
+
+		}
+		else{
+			$msg = "<div class='alert alert-danger text-capitalize'>not available for online reading.</div>";
+		}
+
+	break;
 }
+
 //Get Author ID & will output the books from that author_id (ENGLISH)
 if (isset($_GET['author_id'])){
 	$author_id = $_GET['author_id'];
 	$sql = "SELECT 
 					tblbooks.id,
 					tblbooks.book_pic,
+					tblbooks.book_online,
 					tblbooks.book_name,
 					tblbooks.book_name_urdu,
 					tblcategory.category_name,
@@ -125,6 +156,7 @@ elseif (isset($_GET['author_id_urdu'])){
 	$sql = "SELECT 
 					tblbooks.id,
 					tblbooks.book_pic,
+					tblbooks.book_online,
 					tblbooks.book_name,
 					tblbooks.book_name_urdu,
 					tblcategory.category_name,
@@ -147,6 +179,7 @@ elseif (isset($_GET['cat_id'])){
 	$sql = "SELECT 
 					tblbooks.id,
 					tblbooks.book_pic,
+					tblbooks.book_online,
 					tblbooks.book_name,
 					tblbooks.book_name_urdu,
 					tblcategory.category_name,
@@ -168,6 +201,7 @@ elseif (isset($_GET['cat_id'])){
 	$sql = "SELECT 
 					tblbooks.id,
 					tblbooks.book_pic,
+					tblbooks.book_online,
 					tblbooks.book_name,
 					tblbooks.book_name_urdu,
 					tblcategory.category_name,
@@ -189,6 +223,7 @@ if(isset($_POST['search']) && !empty($_POST['search'])){
 	$sql="SELECT 
 				tblbooks.id,
 				tblbooks.book_pic,
+				tblbooks.book_online,
 				tblbooks.book_name,
 				tblbooks.book_name_urdu,
 				tblcategory.category_name,
@@ -273,9 +308,9 @@ if (isset($msg))
 												<th class="text-nowrap">Updt. Date</th>
 											<?php } ?>
 											<?php if (IfIsUser($conn)) { ?>
-												<th class="text-nowrap">Request</th>
-											<?php } else { ?>
 												<th colspan="2" class="text-nowrap">Action</th>
+											<?php } else { ?>
+												<th colspan="3" class="text-nowrap">Action</th>
 											<?php } ?>
 										</tr>
 									</thead>
@@ -324,7 +359,23 @@ if (isset($msg))
 														</a>
 													</button>
 												</td>
-											<?php } else { ?>
+												<?php if (isset($row['book_online'])) {?>
+													<td>
+														<button role="button" class="btn btn-info btn-sm">
+															<a class="" href="<?php echo WEBSITE_URL.'book_list.php?action=online&id='.$row['id']; ?>">
+																<i class="fa fa-eye fa-2x"></i>
+															</a>
+														</button>
+													</td>
+												<?php }else{ ?>
+													<td>
+														<button role="button" class="btn btn-info btn-sm">
+															<a class="" href="<?php echo WEBSITE_URL.'book_list.php?action=online&id=#'; ?>">
+																<i class="fa fa-eye-slash fa-2x"></i>
+															</a>
+														</button>
+													</td>
+											<?php }} else { ?>
 												<td>
 													<button role="button" class="btn btn-warning btn-sm">
 														<a href="<?php echo WEBSITE_URL. 'book_add.php?id='.$row['id']; ?> ">
@@ -337,7 +388,23 @@ if (isset($msg))
 														<i class="display-5 glyphicon glyphicon-trash"></i>
 													</button>
 												</td>
-											<?php } ?>
+												<?php if (isset($row['book_online'])) {?>
+													<td>
+														<button role="button" class="btn btn-info btn-sm">
+															<a class="" href="<?php echo WEBSITE_URL.'book_list.php?action=online&id='.$row['id']; ?>">
+																<i class="display-5 glyphicon glyphicon-eye-open"></i>
+															</a>
+														</button>
+													</td>
+												<?php }else{ ?>
+													<td>
+														<button role="button" class="btn btn-info btn-sm">
+															<a class="" href="<?php echo WEBSITE_URL.'book_list.php?action=online&id=#'; ?>">
+																<i class="display-5 glyphicon glyphicon-eye-close"></i>
+															</a>
+														</button>
+													</td>
+											<?php }} ?>
 										</tr>
 										<?php }
 											}else{
@@ -397,11 +464,11 @@ if (isset($msg))
 
 <script>
 function delete_confirm(id) {
-  var txt;
-  if (confirm("Are you sure? you want to delete this record.Remember: It can't be recovered.")) {
-   window.location.href = "<?php echo WEBSITE_URL. 'book_list.php?action=delete&id=' ?>"+id;
-  }
-  header("location:<?php echo WEBSITE_URL. 'book_list.php' ?>");
+	var txt;
+  	if (confirm("Are you sure? you want to delete this record.Remember: It can't be recovered.")) {
+   		window.location.href = "<?php echo WEBSITE_URL. 'book_list.php?action=delete&id=' ?>"+id;
+  	}
+  	header("location:<?php echo WEBSITE_URL. 'book_list.php' ?>");
 }
 </script>
 

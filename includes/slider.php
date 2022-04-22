@@ -43,11 +43,11 @@ $result = $conn->query($sql);
 			<?php $x// =0;
 			//foreach ($result as $row) { ?>
 				<h3><?php //echo $row['title']; ?></h3>
-			<?php $//x++; } ?>
+			<?php //$x++; } ?>
 			<?php $x //=0;
 			//foreach ($result as $row) { ?>
 				<p><?php //echo $row['content']; ?></p>
-			<?php $//x++; } ?>
+			<?php //$x++; } ?>
 		</div>-->
     <?php $x++; } ?>
   	<!-- Left and right controls -->

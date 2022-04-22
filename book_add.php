@@ -19,6 +19,8 @@ if (isset($_POST['book-add']))
 	
 	$book_pic 			= $_FILES['book_pic']['name'];
 	$book_pic_tmp 		= $_FILES['book_pic']['tmp_name'];
+	$book_online 		= $_FILES['book_online']['name'];
+	$book_online_tmp 	= $_FILES['book_online']['tmp_name'];
 	$book_name 			= trim($_POST['book_name']);
 	$book_name_urdu 	= trim($_POST['book_name_urdu']);
 	$cat_id 			= $_POST['cat_id'];
@@ -26,7 +28,23 @@ if (isset($_POST['book-add']))
 	$isbn_no  			= $_POST['isbn_no'];
 	$price 				= $_POST['price'];
 	
-	//Moves uploaded Profile Pictures to a permenent location
+	//Get author name
+	$author = "SELECT `id`, `author_name`, `author_name_urdu`, `creation_date`, `updation_date` FROM `tblauthors` WHERE id = {$author_id}";
+    $result = $conn->query($author);
+    //Fetches out author name
+    if ($result && $result->num_rows > 0){
+		$row = $result->fetch_assoc();
+		$author_name 		= $row['author_name'];
+	}
+    else{
+        $msg = "<div class='alert alert-danger text-capitalize'>no author!</div>";	
+    }
+	//Changes the name of uploaded PDF
+	$book_online = $book_name." by ".$author_name.".pdf";
+	//Moves uploaded Online Book to a permanent location
+	move_uploaded_file($book_online_tmp,"./files/book/$book_online");
+	
+	//Moves uploaded Profile Pictures to a permanent location
 	move_uploaded_file($book_pic_tmp,"./images/book_pic/$book_pic");
 
 	if (!empty($book_name) && !empty($isbn_no) && !empty($cat_id) && !empty($author_id)  && !empty($price)){
@@ -35,6 +53,7 @@ if (isset($_POST['book-add']))
 		{
 			$sql_update = "UPDATE `tblbooks` SET 
 			`book_pic` 			= ?,
+			`book_online` 		= ?,
 			`book_name` 		= ?,
 			`book_name_urdu` 	= ?,
 			`cat_id` 			= ?,
@@ -50,13 +69,13 @@ if (isset($_POST['book-add']))
 			elseif (IfExist(TBLBOOKS, 'book_name_urdu', $book_name_urdu)) {
 					$msg = "<div class='alert alert-info urdu'><p><strong>".$book_name_urdu."</strong>کا اندراج پہلے ہی ہو چکا ہے۔ مکمل لسٹ دیکھنے کے لئے  <a class='' href='".WEBSITE_URL."/book_list.php'>یہاں</a> کلک/ٹیپ کریں۔ </p></div>";
 			}
-			$sql_insert = "INSERT INTO `tblbooks`(`book_pic`,`book_name`,`book_name_urdu`, `cat_id`, `author_id`, `isbn_number`, `book_price`)
+			$sql_insert = "INSERT INTO `tblbooks`(`book_pic`, `book_online`,`book_name`,`book_name_urdu`, `cat_id`, `author_id`, `isbn_number`, `book_price`)
 				    VALUES (?,?,?,?,?,?,?)";
 		}
     	if(isset($sql_update)){
 			// prepare and bind
 			$stmt = $conn->prepare($sql_update);
-			$stmt->bind_param("sssiisdi",$book_pic,$book_name,$book_name_urdu,$cat_id,$author_id,$isbn_no,$price,$_GET['id']);
+			$stmt->bind_param("ssssiisdi",$book_pic,$book_online,$book_name,$book_name_urdu,$cat_id,$author_id,$isbn_no,$price,$_GET['id']);
             $result = $stmt->execute();
             if ($result)
             {
@@ -68,14 +87,14 @@ if (isset($_POST['book-add']))
         }else{
 			// prepare and bind
 			$stmt = $conn->prepare($sql_insert);
-			$stmt->bind_param("sssiisd",$book_pic,$book_name,$book_name_urdu,$cat_id,$author_id,$isbn_no,$price);
+			$stmt->bind_param("ssssiisd",$book_pic,$book_online,$book_name,$book_name_urdu,$cat_id,$author_id,$isbn_no,$price);
             $result = $stmt->execute();
             if ($result)
             {
             	$msg = "<div class='alert alert-success'>Book added successfully😀, To View Books' List Click/Tap <a href='".WEBSITE_URL."/book_list.php'>HERE</a></div>";	
             }
             else{
-                $msg = "<div class='alert alert-danger'>Errors occured!!</div>";	
+                $msg = "<div class='alert alert-danger'>Errors occurred!!</div>";	
             }
         }
 	}
@@ -84,8 +103,9 @@ if (isset($_POST['book-add']))
 	}
 }
 
-$id             = "";
+$id             = '';
 $book_pic 		= '';
+$book_online 	= '';
 $book_name 		= '';
 $book_name_urdu = '';
 $cat_id 		= '';
@@ -102,6 +122,7 @@ $result = $conn->query($select);
 		$row = $result->fetch_assoc();
 		$id 			= $row['id'];
 		$book_pic 		= $row['book_pic'];
+		$book_online 	= $row['book_online'];
 		$book_name 		= $row['book_name'];
 		$book_name_urdu = $row['book_name_urdu'];
 		$cat_id 		= $row['cat_id'];
@@ -138,6 +159,9 @@ echo $msg;
 									<p class="labelenglish"><b>Book Picture:</b></p>
 									<input type="file" accept="img/*" value="<?php echo $book_pic ?>" name="book_pic" class="labelenglish text-uppercase" />
 									<p class="labelenglish"><small><b>Note:</b><br /> Your <b class="text-uppercase text-right"><?php if(empty($book_pic)){ echo 'Book Picture'; }else{ echo $book_pic; } ?></b> must not be more than <b>11 MB</b>.</small></p>
+									<p class="labelenglish"><b>Upload Book (PDF Only):</b></p>
+									<input type="file" accept=".pdf" value="<?php echo $book_online ?>" name="book_online" class="labelenglish text-uppercase" />
+									<p class="labelenglish"><small><b>Note:</b><br /> Your <b class="text-uppercase text-right"><?php if(empty($book_online)){ echo 'Online Book (PDF Only)'; }else{ echo $book_online; } ?></b> must not be more than <b>11 MB</b>.</small></p>
 									<p class="labelenglish"><b>Book Name:</b></p>
 									<input type="text" name="book_name" value="<?php echo $book_name ?>" class="blank"  />
 									<p class="labelurdu"><b>:کتاب کا نام</b></p>

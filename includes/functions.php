@@ -163,10 +163,10 @@ function GetTotalSearchResult($conn,$result,$search)
 function GetTotal($conn, $tblname)
 {
 	$sql = "SELECT * FROM $tblname";
-    $result = $conn->query($sql);
-    $result = mysqli_num_rows($result);
+	$result = $conn->query($sql);
+	$result = mysqli_num_rows($result);
 
-    return  ($result);
+	return  ($result);
 }
 
 /*
@@ -179,8 +179,8 @@ function GetTotal($conn, $tblname)
 
 function redirect($location)
 {
-    header("Location:".WEBSITE_URL. $location);
-    exit;
+	header("Location:".WEBSITE_URL. $location);
+	exit;
 }
 
 /*
@@ -195,7 +195,7 @@ function IfIsUser($conn)
 {
 	if (isset($_SESSION['user_name'])) {
 		$sql = "SELECT * FROM tblusers WHERE user_name = '{$_SESSION['user_name']}' ";
-	    $result = $conn->query($sql);
+		$result = $conn->query($sql);
 		if ($result &&  $result->num_rows > 0){
 			return true;
 		}
@@ -252,7 +252,7 @@ function IfExist($tblname, $column, $value)
 	GLOBAL $conn;
 
 	$sql = "SELECT * FROM $tblname WHERE $column = '{$value}' ";
-    $result = $conn->query($sql);
+	$result = $conn->query($sql);
 	if ($result &&  $result->num_rows > 0){
 		return true;
 	}
@@ -270,10 +270,10 @@ function IfExist($tblname, $column, $value)
 function GetTotalWhere($conn, $tblname, $column, $value)
 {
 	$sql = "SELECT * FROM $tblname WHERE $column='{$value}'";
-    $result = $conn->query($sql);
-    $result = mysqli_num_rows($result);
+	$result = $conn->query($sql);
+	$result = mysqli_num_rows($result);
 
-    return  ($result);
+	return  ($result);
 }
 
 /*
@@ -288,17 +288,17 @@ function IsBookRequested($conn,$book_id,$user_id)
 {
 	// check if book is already issued
 	$sql = "SELECT
-		    tblissuedbooksdetail.id,
-		    tblbooks.book_name,
-		    tblusers.full_name,
-		    tblissuedbooksdetail.issue_date,
-		    tblissuedbooksdetail.due_date,
-		    tblissuedbooksdetail.return_date,
-		    tblissuedbooksdetail.return_status,
-		    tblissuedbooksdetail.fine,
-		    tblissuedbooksdetail.comments
+			tblissuedbooksdetail.id,
+			tblbooks.book_name,
+			tblusers.full_name,
+			tblissuedbooksdetail.issue_date,
+			tblissuedbooksdetail.due_date,
+			tblissuedbooksdetail.return_date,
+			tblissuedbooksdetail.return_status,
+			tblissuedbooksdetail.fine,
+			tblissuedbooksdetail.comments
 		FROM
-		    tblissuedbooksdetail
+			tblissuedbooksdetail
 		INNER JOIN tblbooks ON tblissuedbooksdetail.book_id = tblbooks.id
 		INNER JOIN tblusers ON tblissuedbooksdetail.user_id = tblusers.id 
 		WHERE book_id= {$book_id} AND return_status=3";//3=Requested
@@ -321,10 +321,10 @@ function IsBookRequested($conn,$book_id,$user_id)
 function GetTotalWhereAnd($conn, $tblname, $column, $value, $column_and, $value_and)
 {
 	$sql = "SELECT * FROM $tblname WHERE $column='{$value}' AND $column_and=$value_and";
-    $result = $conn->query($sql);
-    $result = mysqli_num_rows($result);
+	$result = $conn->query($sql);
+	$result = mysqli_num_rows($result);
 
-    return  ($result);
+	return  ($result);
 }
 
 /*
