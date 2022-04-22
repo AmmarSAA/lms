@@ -98,14 +98,14 @@ if (isset($_GET['read_more'])) {
 												<th class="text-nowrap">ID</th>
 												<th class="text-nowrap">Rule</th>
 												<th class="urdu text-nowrap">اصول</th>
+												<th class="text-nowrap">Creation Date</th>
+												<th class="text-nowrap">Updation Date</th>
 												<?php 
 												if (IfIsUser($conn)) {
 													echo "";
 												}else{
 													echo "<th colspan='2' class='text-nowrap'>Action</th>";
 												?>
-												<th class="text-nowrap">Creation Date</th>
-												<th class="text-nowrap">Updation Date</th>
 												<?php
 												}
 												?>
