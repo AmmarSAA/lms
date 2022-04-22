@@ -15,7 +15,7 @@ ob_start();
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<title>Masooma Library Online Mangement System</title>
 	<link rel="icon" type="image/gif" href="<?php echo WEBSITE_URL	?>./images/logo.png">
-	<meta name="description" content="N.M Umer Farooq Library">
+	<meta name="description" content="Library Management System">
 	<meta name="author" content="S.A.A">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
