@@ -10,8 +10,8 @@
 		<br />
 		<section id="footer">
 			<div class="footer">
-				<i class="fa fa-globe fa-inverse"></i> www.masoomalibrary.home.blog <b> || </b>
-				&copy; Masooma Library <b> || </b>
+				<i class="fa fa-globe fa-inverse"></i>  <b> || </b>
+				&copy; Online Library Management System <b> || </b>
 				We highly appreciate using GOOGLE CHROME browser.
 			</div>
 		</section>

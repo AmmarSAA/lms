@@ -13,7 +13,7 @@ ob_start();
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Masooma Library Online Mangement System</title>
+	<title>Online Library Management System</title>
 	<link rel="icon" type="image/gif" href="<?php echo WEBSITE_URL	?>./images/logo.png">
 	<meta name="description" content="Library Management System">
 	<meta name="author" content="S.A.A">
