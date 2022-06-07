@@ -10,7 +10,7 @@
 
 // Website Paths
 define("WEBSITE_PATH", "C:/xampp/htdocs/lms/");
-define("WEBSITE_URL", "http://localhost/lms/");
+define("WEBSITE_URL", "http://localhost:8080/lms/");
 
 // Database Configurations
 define("DB_SERVER", "localhost");

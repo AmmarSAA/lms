@@ -290,16 +290,16 @@ if (isset($msg))
 											<th class="text-nowrap">Book Name</th>
 											<th class="urdu text-nowrap">کتاب کا نام</th>
 											<th class="text-nowrap">Category</th>
-											<th class="text-nowrap" 
+											<th class="text-nowrap
 												<?php 
 													if (isset($_GET['author_id_urdu'])) {
 														$author_id_urdu = $_GET['author_id_urdu'];
 													}else{
 														$author_id_urdu = '';
 													}
-													if ($author_id_urdu) { echo "class=urdu"; }
-												?>
-											><?php if ($author_id_urdu) { echo "مصنف کا نام"; }else{ echo "Author"; } ?></th class="text-nowrap">
+													if ($author_id_urdu) { echo " urdu"; }
+												?>"
+											><?php if ($author_id_urdu) { echo "مصنف کا نام"; }else{ echo "Author"; } ?></th>
 											<th class="text-nowrap">ISBN No.</th>
 											<th class="text-nowrap">Price</th>
 											<th class="text-nowrap">Status</th>
